@@ -1,0 +1,116 @@
+# =====================================================================
+#  YMH219 projeleri için ortak .gitignore
+#  FlappyBird · KeyEventLogger · ChatApp · SpeechApp · FaceRecognition · NotepadApp
+#
+#  Depoya yalnızca kaynak kod, çözüm ve proje dosyaları (.sln, .csproj),
+#  README, ekran görüntüleri ve uygulamanın ihtiyaç duyduğu model dosyaları
+#  (ör. FaceRecognition/Modeller/*.onnx) girer. Aşağıdakiler girmez.
+# =====================================================================
+
+# ---------------------------------------------------------------------
+#  Derleme çıktıları (Visual Studio / dotnet build her derlemede yeniden üretir)
+# ---------------------------------------------------------------------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Pp]ublish/
+[Ll]og/
+[Ll]ogs/
+
+# ---------------------------------------------------------------------
+#  Visual Studio'nun kullanıcıya özel ayarları ve önbelleği
+# ---------------------------------------------------------------------
+.vs/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.slnLaunch.user
+*.[Cc]ache
+!?*.[Cc]ache/
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# ---------------------------------------------------------------------
+#  NuGet (paketler derlemede kendiliğinden geri yüklenir)
+# ---------------------------------------------------------------------
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ---------------------------------------------------------------------
+#  Test sonuçları
+# ---------------------------------------------------------------------
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+
+# ---------------------------------------------------------------------
+#  Diğer geliştirme araçları (Rider, VS Code)
+# ---------------------------------------------------------------------
+.idea/
+*.sln.iml
+.vscode/
+
+# ---------------------------------------------------------------------
+#  Geçici dosyalar
+# ---------------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.log
+*.swp
+*~
+~$*
+
+# ---------------------------------------------------------------------
+#  İşletim sistemi dosyaları
+# ---------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# ---------------------------------------------------------------------
+#  Uygulamaların çalışırken ürettiği kişisel veriler
+#  Uygulamalar bunları proje klasörüne değil %AppData% / %LocalAppData%
+#  altına ya da kullanıcının seçtiği yere yazar. Proje klasörüne
+#  kaydedilir veya kopyalanırsa yanlışlıkla depoya girmesinler diye:
+# ---------------------------------------------------------------------
+# FaceRecognition: yüz örnekleri ve "Yüzleri Kaydet" ile kaydedilen yüzler
+Ornekler/
+AlgilananYuzler/
+# KeyEventLogger: tuş kayıtları (parola gibi kişisel bilgiler içerebilir)
+tus-kayitlari_*.txt
+# ChatApp: sohbet geçmişi
+sohbet_*.txt
+# SpeechApp: yazıya dökülen metin ve zaman damgalı tanıma kayıtları
+yazi_*.txt
+tanima_kaydi_*.txt
+# NotepadApp: not dosyası ve bozuk dosya yedekleri
+notlar.xml
+notlar.bozuk-*.xml
+# FlappyBird: rekor dosyası
+rekorlar.txt
